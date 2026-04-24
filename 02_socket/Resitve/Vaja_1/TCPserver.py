@@ -1,0 +1,17 @@
+import socketserver
+
+class MyTCPHandler(socketserver.BaseRequestHandler):
+
+
+    def handle(self):
+        """ Handle naj sprejme sporočilo, in sporočilo pošlje nazaj"""
+        self.data = self.request.recv(1024).strip()
+        print("{} wrote:".format(self.client_address[0]))
+        print(self.data.decode())
+        self.request.sendall(self.data.upper())
+
+if __name__ == "__main__":
+    HOST, PORT = "0.0.0.0", 1234
+
+    with socketserver.TCPServer((HOST, PORT), MyTCPHandler) as server:
+        server.serve_forever()
