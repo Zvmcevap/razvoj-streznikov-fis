@@ -1,0 +1,18 @@
+[
+  {
+    "ime": "Martin",
+    "visina": "153"
+  },
+  {
+    "ime": "Martin",
+    "visina": "153"
+  },
+  {
+    "ime": "Martin",
+    "visina": "153"
+  },
+  {
+    "ime": "Ziga",
+    "visina": "180"
+  }
+]

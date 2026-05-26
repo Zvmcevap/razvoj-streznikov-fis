@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package naloga1;
+
+// Message that contains one string field
+message Sporocilo {
+  string text = 1;
+}
+
+// Service with one RPC method
+service Naloga1 {
+  rpc Uppercase(Sporocilo) returns (Sporocilo);
+}

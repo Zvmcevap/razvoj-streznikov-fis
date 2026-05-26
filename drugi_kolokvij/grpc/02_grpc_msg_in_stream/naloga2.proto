@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package naloga2;
+
+message Empty {}
+
+message Number {
+  float value = 1;
+}
+
+message Index {
+  int32 index = 1;
+}
+
+service Naloga2 {
+  rpc SendOne(Number) returns (Empty);
+  rpc GetOne(Index) returns (Number);
+  rpc SendMore(stream Number) returns (Empty);
+  rpc GetAll(Empty) returns (stream Number);
+}
